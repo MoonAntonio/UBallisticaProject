@@ -1,6 +1,6 @@
 ﻿//                                  ┌∩┐(◣_◢)┌∩┐
 //																				\\
-// ArcBallistica.cs (30/03/2017)												\\
+// ArcBallisticaSimple.cs (30/03/2017)											\\
 // Autor: Antonio Mateo (Moon Antonio) 									        \\
 // Descripcion:		Generador del arco de la ballistica							\\
 // Fecha Mod:		30/03/2017													\\
@@ -17,13 +17,13 @@ namespace MoonAntonio
 	/// <para>Generador del arco de la ballistica</para>
 	/// </summary>
 	[RequireComponent(typeof(LineRenderer))]
-	public class ArcBallistica : MonoBehaviour 
+	public class ArcBallisticaSimple : MonoBehaviour 
 	{
 		#region Variables Publicas
 		/// <summary>
-		/// <para>Velocidad del arco</para>
+		/// <para>Distancia del arco</para>
 		/// </summary>
-		public float velocidad = 0f;							// Velocidad del arco
+		public float distancia = 0f;							// Distancia del arco
 		/// <summary>
 		/// <para>Angulo del arco</para>
 		/// </summary>
@@ -80,6 +80,19 @@ namespace MoonAntonio
 		}
 		#endregion
 
+		#region Metodos
+		/// <summary>
+		/// <para>Cuando cambia el script o se cambian los parametros del inspector.</para>
+		/// </summary>
+		private void OnValidate()// Cuando cambia el script o se cambian los parametros del inspector
+		{
+			if(lr != null && Application.isPlaying)
+			{
+				RenderizarArco();
+			}
+		}
+		#endregion
+
 		#region Funcionalidad
 		/// <summary>
 		/// <para>Calcula el array del arco</para>
@@ -90,7 +103,7 @@ namespace MoonAntonio
 
 			// Calcular el angulo radiano y la distancia max
 			angRadi = Mathf.Deg2Rad * angulo;
-			float distanciaMax = (velocidad * velocidad * Mathf.Sin(2 * angRadi)) / g;
+			float distanciaMax = (distancia * distancia * Mathf.Sin(2 * angRadi)) / g;
 
 			for (int n = 0; n <= calidadArc; n++)
 			{
@@ -110,7 +123,7 @@ namespace MoonAntonio
 		private Vector3 CalcularPuntoArc(float punto, float distMax)// Calcula un punto del arco
 		{
 			float x = punto * distMax;
-			float y = x * Mathf.Tan(angRadi) - ((g * x * x) / (2 * velocidad * velocidad * Mathf.Cos(angulo) * Mathf.Cos(angulo)));
+			float y = x * Mathf.Tan(angRadi) - ((g * x * x) / (2 * distancia * distancia * Mathf.Cos(angulo) * Mathf.Cos(angulo)));
 			return new Vector3(x, y);
 		}
 		#endregion
