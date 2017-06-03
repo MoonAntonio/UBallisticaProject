@@ -12,3 +12,5 @@ Comprobacion de una trayectoria ballistica. Investigacion de su desarrollo.
 <p align="center"><img src="https://github.com/MoonAntonio/UBallisticaProject/blob/master/Res/prevSimple.gif?raw=true"></p>
 
 > Trayectoria Avanzada
+
+[En Progreso]
