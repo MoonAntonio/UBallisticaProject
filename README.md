@@ -3,6 +3,8 @@
 [![Trello](https://img.shields.io/badge/Trello-OFF-red.svg)](https://github.com/MoonAntonio/UBallisticaProject)
 [![Slack Status](https://moonantonio.herokuapp.com/badge.svg)](https://moonantonio.herokuapp.com/)
 [![GitHub license](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://raw.githubusercontent.com/MoonAntonio/UBallisticaProject/master/LICENSE)
+[![GitHub forks](https://img.shields.io/github/forks/MoonAntonio/UBallisticaProject.svg)](https://github.com/MoonAntonio/UBallisticaProject/network)
+[![GitHub stars](https://img.shields.io/github/stars/MoonAntonio/UBallisticaProject.svg)](https://github.com/MoonAntonio/UBallisticaProject/stargazers)
 
 # UBallisticaProject
 Comprobacion de una trayectoria ballistica. Investigacion de su desarrollo.
